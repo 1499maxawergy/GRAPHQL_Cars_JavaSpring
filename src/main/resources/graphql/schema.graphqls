@@ -1,0 +1,26 @@
+type Car{
+    id: ID!
+    title: String!
+    price: Int!
+    age: Int!
+    brand: String!
+}
+
+input CarInput{
+    title: String!
+    price: Int!
+    age: Int!
+    brand: String!
+}
+
+type Query{
+    findCarsByTitle(title: String): [Car]
+    findCarsByBrand(brand: String): [Car]
+    findCarsByAge(age: Int): [Car]
+    findCarsByPrice(price: Int): [Car]
+    cars: [Car]
+}
+
+type Mutation{
+    addCar(CInput: CarInput): Car
+}
